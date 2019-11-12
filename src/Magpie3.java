@@ -112,6 +112,10 @@ public class Magpie3 {
 	 *         it's not found
 	 */
 	private int findKeyword(String statement, String goal) {
+		findKeyword("She's my sister", "sister", 0);
+		findKeyword("Brother Tom is helpful", "brother", 0);
+		findKeyword("I can't catch wild cats.", "cat", 0);
+		findKeyword("I know nothing about snow plows.", "no", 0);
 		return findKeyword(statement, goal, 0);
 	}
 

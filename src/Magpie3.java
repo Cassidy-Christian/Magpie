@@ -26,21 +26,42 @@ public class Magpie3 {
 	 * @return a response based on the rules given
 	 */
 	public String getResponse(String statement) {
-		String response = "";
-		if (statement.length() == 0) {
-			response = "Say something, please.";
-		} else if (findKeyword(statement, "no") >= 0) {
+		String response = ""; 
+		if (this.findKeyword(statement, "no",0) >= 0) {
 			response = "Why so negative?";
-		} else if (findKeyword(statement, "mother") >= 0
-				|| findKeyword(statement, "father") >= 0
-				|| findKeyword(statement, "sister") >= 0
-				|| findKeyword(statement, "brother") >= 0) {
+		} else if (statement.length()<1){
+			response= "Say something, please."; 
+		}
+		else if (this.findKeyword(statement,"name",0) >= 0){
+			response=" My name is Siri."; 
+		}
+		else if (this.findKeyword(statement,"Cassidy",0) >= 0){
+			response=" Hello, Cassidy!"; 
+		}
+		else if (this.findKeyword(statement,"happy",0) >= 0){
+			response=" I am happy too!"; 
+		}
+		else if (this.findKeyword(statement,"school",0) >= 0){
+			response=" School is cool! I have all the degrees."; 
+		}
+		else if (this.findKeyword(statement,"mother",0) >= 0
+				|| this.findKeyword(statement,"father",0) >= 0
+				|| this.findKeyword(statement,"sister",0) >= 0
+				|| this.findKeyword(statement,"brother",0) >= 0) {
 			response = "Tell me more about your family.";
-		} else {
+		} else if (this.findKeyword(statement,"dog",0)>=0
+				||this.findKeyword(statement,"cats",0) >= 0){
+			response = "Tell me more about your pets.";
+		} else if (this.findKeyword(statement,"Padgen",0) >= 0){
+			response= "Mr. Padgen is the best!"; 
+		}
+		
+		else {
 			response = getRandomResponse();
 		}
 		return response;
 	}
+
 
 	/**
 	 * Search for one word in phrase. The search is not case sensitive. This

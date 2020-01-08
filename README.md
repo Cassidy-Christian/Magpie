@@ -2,6 +2,8 @@
 
 ## Getting started
 
+This is my change on January 8th, 2020, to see that I can clone and commit. 
+
 ```
 $ git fetch origin
 $ git checkout activity1
